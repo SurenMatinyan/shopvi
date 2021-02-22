@@ -1,0 +1,10 @@
+.dialog{
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    display: inline;
+    
+}
+
+.dialog a{
+    color: rgb(255, 255, 255);
+}

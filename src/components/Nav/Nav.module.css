@@ -1,0 +1,56 @@
+
+.nav{
+    display: grid;
+    grid-template-columns: 10% 40% 50%;
+    padding: 10px;
+    margin: 0px 60px;
+    background: #fff;
+	border-bottom: 1px solid #dfe3e8;
+	border-radius: 0;
+}
+
+.ul {
+    float: left;
+}
+
+.item {
+    display: inline;
+    padding: 20px;
+}
+
+.item a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+
+}
+
+
+
+.item a.active {
+    color: darkorange;
+    background: transparent;
+}
+
+
+
+
+.logo{
+    display: inline;
+    float: left;
+}
+
+
+
+
+.itemform {
+    display: inline;
+    float: right;
+    padding: 0px 20px;
+}
+.itemform a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
