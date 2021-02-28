@@ -2,26 +2,28 @@
 .nav{
     display: grid;
     grid-template-columns: 10% 40% 50%;
-    padding: 10px;
+    padding: 4px;
     margin: 0px 60px;
     background: #fff;
 	border-bottom: 1px solid #dfe3e8;
-	border-radius: 0;
+	border-radius: 0; 
 }
 
 .ul {
     float: left;
+    
 }
 
 .item {
     display: inline;
     padding: 20px;
+    text-decoration: none;
+    
 }
 
 .item a{
     color: rgb(0, 0, 0);
     text-decoration: none;
-
 }
 
 
@@ -29,7 +31,12 @@
 .item a.active {
     color: darkorange;
     background: transparent;
+     text-decoration: none;
 }
+
+.nav li:hover {
+    background-color: rgb(255, 255, 231);
+  }
 
 
 

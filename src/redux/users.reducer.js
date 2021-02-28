@@ -10,7 +10,6 @@ const usersState = {
         {id: 3, followed: true, fullname: "Gevorg", status: "ofline", location: {city: "Gyumri", country: "armenia"} }
     ]
 }
-console.log(usersState.users[0].followed);
 
 const userReducer = (state = usersState, action) => {
     switch(action.type){
