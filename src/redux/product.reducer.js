@@ -5,7 +5,7 @@ const productState = {
     product: [
       
     ],
-    page: 2,
+    page: 1,
 
     pageCount: 6
 }

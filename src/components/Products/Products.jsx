@@ -17,11 +17,13 @@ const Products =  function(props) {
                 <div className={classes.productss}>
                 {props.product.map( el => <NavLink to={`/item/${el._id}`}>
                     <div className={classes.product}>
-                        <img width='200px' src={'https://servershopviki.herokuapp.com' + el.imgURL + ".jpg"}/>
-                        <li>{el.name}</li>
-                        <li>{el.comment}</li>
-                        <li>{el.price}</li>
-                        <br/>
+                        <img className={classes.img} width='250px' src={'https://servershopviki.herokuapp.com' + el.imgURL}/>
+                        <div className={classes.itemText}>
+                            <li>{el.name}</li>
+                            <li>{el.comment}</li>
+                            <li>{el.price} Դր․</li>
+                        </div>
+        
                     </div>
                 </NavLink>
             ) }
