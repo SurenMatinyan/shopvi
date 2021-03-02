@@ -15,11 +15,18 @@ const Nav =  function() {
                 <li className={classes.item}><NavLink to="/products" activeClassName={classes.active}>PRODUCTS</NavLink></li>
             </ul>
         </div>
-        <div className={classes.form}>
-            <ul>
-                <li className={classes.itemform}><NavLink to="/login" activeClassName={classes.active}>LOGIN</NavLink></li>
-                <li className={classes.itemform}><NavLink to="/signup" activeClassName={classes.active}>SIGN UP</NavLink></li>
-            </ul>
+        <div className={classes.signin}>
+            <div className={classes.form}>
+                <form className={classes.input} >
+                    <input type="email" placeholder="EMAIL" />
+                    <input type="password" placeholder="PASSWORD"/>
+                    <button>LOGIN</button>
+                </form>
+            </div>
+            <div className={classes.signup}>
+                <NavLink to="/signup" activeClassName={classes.active}>SIGN UP</NavLink>
+            </div>
+        
          </div>
 
      

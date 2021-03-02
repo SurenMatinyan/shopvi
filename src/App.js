@@ -11,7 +11,7 @@ import Admin from './components/Admin/Admin';
 
 function App() {
   return (
-    <div>
+    <div className='touch'>
       <Route path='/'  component={Header} />
       <Route path='/'  component={Nav} />
       <Route path='/profile'  component={UsersContainer} />
