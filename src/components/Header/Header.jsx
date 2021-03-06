@@ -6,7 +6,7 @@ const Header =  function() {
         <div className={classe.App}>
          
             <ul>
-                <il>asd</il>
+                <il></il>
             </ul>
          
         </div>

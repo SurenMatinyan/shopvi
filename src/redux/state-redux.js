@@ -3,12 +3,14 @@ import reducerMessage from './reducer.message';
 import usersReducer from './users.reducer';
 import productReducer from './product.reducer';
 import itemReducer from './item.reducer';
+import { reducer as formReducer } from 'redux-form';
 
 const reducer = combineReducers({
     state: reducerMessage,
     usersPage: usersReducer,
     productPage: productReducer,
-    itemPage: itemReducer
+    itemPage: itemReducer,
+    form: formReducer
 });
 
 const store = createStore(reducer);

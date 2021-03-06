@@ -11,7 +11,7 @@ class ProductsContainer extends React.Component {
         fetch(URL + `/products?page=${this.props.page}`)
             .then(res => res.json())
             .then(result => {
-               this.props.setProduct(result);
+                this.props.setProduct(result);
             })
     }
     onPageChang(page){
@@ -32,7 +32,7 @@ class ProductsContainer extends React.Component {
         )
     }
 }
-
+debugger;
 const stateToProps = (state) => {
     return { product: state.productPage.product, 
              page: state.productPage.page,

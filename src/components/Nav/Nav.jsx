@@ -1,12 +1,33 @@
 import { NavLink } from 'react-router-dom';
-import classes from './Nav.module.css'
+import classes from './Nav.module.css';
+import Login from './Login';
+import URL from '../../URL';
 
 
 
-const Nav =  function() {
+
+
+const Nav =  function(props) {
+
+    console.log(props.users)
+
+    const onSubmit = (formData) => {
+        const { email, password } = formData;
+        fetch(URL + '/users/login', {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email, password})
+        })
+        .then(res => res.json())
+        .then(result => {
+            if(result.status === 0) return props.setUsers({...result.user, auth: true});
+            return console.log("sxal parol");
+        })
+    }
+    
     return (
-        <div className={classes.nav}>
-        <div className={classes.logo}>LOGO</div>
+    <div className={classes.nav}>
+        <div className={classes.logo}>VIKI</div>
         <div>
             <ul className={classes.ul}>
                 <li className={classes.item}><NavLink to="/home" activeClassName={classes.active}>HOME</NavLink></li>
@@ -15,25 +36,12 @@ const Nav =  function() {
                 <li className={classes.item}><NavLink to="/products" activeClassName={classes.active}>PRODUCTS</NavLink></li>
             </ul>
         </div>
-        <div className={classes.signin}>
-            <div className={classes.form}>
-                <form className={classes.input} >
-                    <input type="email" placeholder="EMAIL" />
-                    <input type="password" placeholder="PASSWORD"/>
-                    <button>LOGIN</button>
-                </form>
-            </div>
-            <div className={classes.signup}>
-                <NavLink to="/signup" activeClassName={classes.active}>SIGN UP</NavLink>
-            </div>
-        
-         </div>
 
-     
+        {!props.users.auth ? <Login onSubmit={onSubmit}/> : <div>{props.users.email}Log Out</div>}
+        
+
     </div>
       )
 }
 
 export default Nav;
-/*
-*/
