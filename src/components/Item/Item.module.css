@@ -7,23 +7,38 @@
 .itemContiner{
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
-    grid-template-rows: 1fr;
     width: 100%;
-   /* margin: auto;
-    border: 1px solid rgb(200, 218, 200);
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);*/
 }
 
 .imgContiner {
+    display: grid;
+    grid-template-rows: 1.8fr 0.2fr;
     border: 1px solid rgb(200, 218, 200);
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
+    
 }
 
 .img{
     width: 400px;
     margin-left: 40px;
+    
+}
+
+.imgType {
+    width: 70%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    margin: 0 auto;
+    border-top: solid 1px black;
+}
+
+.imgType div{
+    border: solid 1px black;
+    padding: 5px;
+    margin-left: 8px;
     
 }
 

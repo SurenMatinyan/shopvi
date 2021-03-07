@@ -15,7 +15,6 @@ class NavContainer extends React.Component {
         })
         .then(res => res.json())
         .then(result => {
-            console.log(result)
             if(result.status === 0) this.props.setUsers({...result.user, auth: true});
             return this.props.setUsers({auth: false, name: null});
             

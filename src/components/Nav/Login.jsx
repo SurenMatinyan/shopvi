@@ -14,7 +14,7 @@ const Login =  function(props) {
                 </form>
             </div>
             <div className={classes.signup}>
-                <NavLink to="/signup" activeClassName={classes.active}>SIGN UP</NavLink>
+                <div className={classes.signupButton}><NavLink to="/signup">SIGN UP</NavLink></div>
             </div>
          </div>
       )

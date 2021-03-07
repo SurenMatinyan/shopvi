@@ -8,7 +8,7 @@ const Products =  function(props) {
     for(let i = 1; i <= props.pageCount; i ++){
         pageCount.push(i);
     }
-    console.log(props.product);
+    
     return (
         <div className={classes.grid}>
             <div><SideBar /></div>
@@ -28,11 +28,11 @@ const Products =  function(props) {
                 </NavLink>
             ) }
                 </div>
-
+                {console.log(props)}    
                 <div className={classes.pageContin}>
                     <div>
                         {pageCount.map( el => 
-                                <span className={classes.pageNum} onClick={ () => {props.onPageChang(el)}}>{el}</span>
+                                <NavLink to={`/products?pag=1`}>{el}</NavLink>
                             )}
                     </div>
                 </div>

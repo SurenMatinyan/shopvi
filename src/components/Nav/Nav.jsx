@@ -9,8 +9,6 @@ import URL from '../../URL';
 
 const Nav =  function(props) {
 
-    console.log(props.users)
-
     const onSubmit = (formData) => {
         const { email, password } = formData;
         fetch(URL + '/users/login', {

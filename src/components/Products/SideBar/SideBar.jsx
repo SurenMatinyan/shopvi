@@ -10,7 +10,7 @@ const SideBar = () => {
                 <div className={classes.category}>
                     <h1>category</h1>
                     <div>
-                        <div>MAN</div>
+                    <div><NavLink to={`/products?cat=man`}>Man</NavLink></div>
                         <li>shalvar</li>
                         <li>koshik</li>
                         <li>verx</li>

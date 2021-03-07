@@ -32,7 +32,6 @@ class ProductsContainer extends React.Component {
         )
     }
 }
-debugger;
 const stateToProps = (state) => {
     return { product: state.productPage.product, 
              page: state.productPage.page,

@@ -6,7 +6,7 @@ import NavContainer from './components/Nav/NavContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProductContainer from './components/Products/ProductsContainer';
 import ItemContainer from './components/Item/ItemContainer';
-import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home';
 
@@ -18,7 +18,7 @@ function App() {
       <Route path='/profile'  component={UsersContainer} />
       <Route path='/products'  component={ProductContainer} />
       <Route path='/item/:id'  component={ItemContainer} />
-      <Route path='/login' component={Login} />
+      <Route path='/signup' component={Signup} />
       <Route path='/admin' component={Admin} />
       <Route path='/home' component={Home} />
     </div>

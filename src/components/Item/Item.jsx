@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import classes from './Item.module.css';
-import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 
  
 const Item = function(props){
 
-
+    console.log(props);
     return(
     <div className={classes.continer}>
         <div className={classes.itemContiner}>
             <div className={classes.imgContiner}>
                 <img className={classes.img}  src={'https://servershopviki.herokuapp.com' + props.items.imgURL} />
+                <div className={classes.imgType}>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
+                </div>
             </div>
             
             <div className={classes.infoContiner}>
@@ -38,9 +43,10 @@ const Item = function(props){
                         
                         <label className={classes.label} >
                             <input type="radio" name="ll"/>
-                            <p>2asdps</p>
+                            <p>2ps</p>
                         </label>    <br/>    
-                        <input type="text"/>
+                        <input type="text"/><br/>
+                        <button>BUY</button><button>STORY</button>
                     </form>
                 </div>
             </div>
