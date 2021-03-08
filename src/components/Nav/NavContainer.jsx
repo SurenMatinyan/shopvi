@@ -8,6 +8,7 @@ class NavContainer extends React.Component {
     
     
     componentDidMount(){
+        console.log(sessionStorage.getItem('token'));
         fetch(URL + '/users/auth', {
             headers: {
                 authorization: sessionStorage.getItem('token')
@@ -15,8 +16,11 @@ class NavContainer extends React.Component {
         })
         .then(res => res.json())
         .then(result => {
-            if(result.status === 0) this.props.setUsers({...result.user, auth: true});
-            return this.props.setUsers({auth: false, name: null});
+            if(result.status === 0) {
+                console.log("status@ 0 e", result)
+                return this.props.setUsers({...result, isAuth: true});
+            } 
+            return this.props.setUsers({isAuth: false, name: null});
             
         })
     }

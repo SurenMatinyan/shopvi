@@ -6,21 +6,23 @@ import NavContainer from './components/Nav/NavContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProductContainer from './components/Products/ProductsContainer';
 import ItemContainer from './components/Item/ItemContainer';
-import Signup from './components/Signup/Signup';
+import SignupContainer from './components/Signup/SignupContainer';
 import Admin from './components/Admin/Admin';
 import Home from './components/Home/Home';
+import UsersPageContainer from './components/UsersPage/UsersPageContainer';
 
 function App() {
   return (
     <div className='touch'>
       <Route path='/'  component={Header} />
       <Route path='/'  component={NavContainer} />
+      <Route exact path='/' component={Home} />
       <Route path='/profile'  component={UsersContainer} />
       <Route path='/products'  component={ProductContainer} />
       <Route path='/item/:id'  component={ItemContainer} />
-      <Route path='/signup' component={Signup} />
+      <Route path='/signup' component={SignupContainer} />
+      <Route path='/page' component={UsersPageContainer} />
       <Route path='/admin' component={Admin} />
-      <Route path='/home' component={Home} />
     </div>
   );
 }

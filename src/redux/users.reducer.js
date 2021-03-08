@@ -7,14 +7,14 @@ const usersState = {
         lastname: null,
         email: null,
         password: null,
-        auth: false
+        isAuth: false
     }
 }
 
 const userReducer = (state = usersState, action) => {
     switch(action.type){
         case SETUSERS: {
-            return { ...state, users: {...action.users} }
+            return { ...state, users: {...action.users}  }
         }
             
         default: 
