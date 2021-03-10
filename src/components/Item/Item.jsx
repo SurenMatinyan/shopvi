@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import classes from './Item.module.css';
+import URL from '../../URL'
 
 
  
 const Item = function(props){
-
-    console.log(props);
+console.log(props);
     return(
     <div className={classes.continer}>
         <div className={classes.itemContiner}>
             <div className={classes.imgContiner}>
-                <img className={classes.img}  src={'https://servershopviki.herokuapp.com' + props.items.imgURL} />
+                <img className={classes.img}  src={URL + props.items.imgURL} />
                 <div className={classes.imgType}>
                     <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
                     <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>

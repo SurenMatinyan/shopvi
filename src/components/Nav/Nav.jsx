@@ -3,6 +3,7 @@ import classes from './Nav.module.css';
 import Login from './Login';
 import URL from '../../URL';
 import Logout from './Logout/Logout';
+import logo from '../../Viki.jpg';
 
 
 
@@ -29,13 +30,13 @@ const Nav =  function(props) {
     
     return (
     <div className={classes.nav}>
-        <div className={classes.logo}><img width="100px" height="40px" src="https://lh3.googleusercontent.com/proxy/OADMEYuiRbv02EebYhvK3TYUcOWXGyUWWLlHmTCLikn3J_J2XQwvHyv44wdvBLKtKAf__mj5y2EVG8-fRQv359iYhtgGv6wAaDpvMpeBdm9Gx1JVNW-cwJFAP6EznUzI" /></div>
+        <div className={classes.logo}><NavLink to="/"><img width="100px" height="40px" src={logo} /></ NavLink></div>
             <div className={classes.ullChild}>
                 <ul className={classes.ull}>
-                    <li className={classes.item}><NavLink to="/" activeClassName={classes.active}>HOME</NavLink></li>
-                    <li className={classes.item}><NavLink to="/profile" activeClassName={classes.active}>PROFILE</NavLink></li>
-                    <li className={classes.item}><NavLink to="/dialogs" activeClassName={classes.active}>DIALOGS</NavLink></li>
-                    <li className={classes.item}><NavLink to="/products" activeClassName={classes.active}>PRODUCTS</NavLink></li>
+                    <li className={classes.item}><NavLink to="/products/man"   activeClassName={classes.active}>MAN</NavLink></li>
+                    <li className={classes.item}><NavLink to="/products/woman" activeClassName={classes.active}>WOMAN</NavLink></li>
+                    <li className={classes.item}><NavLink to="/products/children" activeClassName={classes.active}>CHILDREN</NavLink></li>
+                    <li className={classes.item}><NavLink to="/page" activeClassName={classes.active}>My Profile</NavLink></li>
                 </ul>
             </div>
         {!props.users.isAuth 

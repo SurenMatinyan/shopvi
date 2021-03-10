@@ -18,7 +18,7 @@ function App() {
       <Route path='/'  component={NavContainer} />
       <Route exact path='/' component={Home} />
       <Route path='/profile'  component={UsersContainer} />
-      <Route path='/products'  component={ProductContainer} />
+      <Route path='/products/:type'  component={ProductContainer} />
       <Route path='/item/:id'  component={ItemContainer} />
       <Route path='/signup' component={SignupContainer} />
       <Route path='/page' component={UsersPageContainer} />

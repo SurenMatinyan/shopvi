@@ -5,7 +5,8 @@ import SideBar from './SideBar/SideBar';
 
 const Products =  function(props) {
     const pageCount = [];
-    for(let i = 1; i <= props.pageCount; i ++){
+    const page = Math.ceil(props.pageCount/15)  
+    for(let i = 1; i <= page; i ++){
         pageCount.push(i);
     }
     
@@ -27,12 +28,11 @@ const Products =  function(props) {
                     </div>
                 </NavLink>
             ) }
-                </div>
-                {console.log(props)}    
+                </div>   
                 <div className={classes.pageContin}>
                     <div>
-                        {pageCount.map( el => 
-                                <NavLink to={`/products?pag=1`}>{el}</NavLink>
+                    {pageCount.map( el => 
+                                <NavLink to={`${props.match.url}?page=${el}`}>{el}</NavLink>
                             )}
                     </div>
                 </div>
@@ -45,3 +45,4 @@ const Products =  function(props) {
 
 
 export default Products;
+ /**/

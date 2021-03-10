@@ -8,11 +8,11 @@ import { setItemAC } from '../../redux/item.reducer';
 class ItemContainer extends React.Component{
     
     componentDidMount(){
-        console.log(this.props.match)
         const productId = this.props.match.params.id
-        fetch(URL + `/products/item?id=${productId}`)
+        fetch(URL + `/products/item/${productId}`)
             .then(res => res.json())
             .then(result => {
+                console.log(result)
                 this.props.setItems(result)
             })
     }

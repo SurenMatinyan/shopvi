@@ -8,7 +8,6 @@ class NavContainer extends React.Component {
     
     
     componentDidMount(){
-        console.log(sessionStorage.getItem('token'));
         fetch(URL + '/users/auth', {
             headers: {
                 authorization: sessionStorage.getItem('token')

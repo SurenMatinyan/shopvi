@@ -13,7 +13,8 @@ const productState = {
 const productReducer = (state = productState, action) => {
     switch(action.type){
         case SETPRODUCT: {
-            return { ...state, product: [...action.product] }
+            console.log(action);
+            return { ...state, product: [...action.product.product], pageCount: action.product.pageCount }
         }
 
         case SETPAGE: {
