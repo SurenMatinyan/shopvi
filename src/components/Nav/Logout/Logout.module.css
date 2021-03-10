@@ -1,5 +1,20 @@
 .display{
-    
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: 1fr;
+  gap: 0px 40px;
+  grid-template-areas:
+    ". .";
+}
+
+.icon {
+ 
+  margin-left: 20px;
+}
+
+.iconBasket{
+  margin-left: 20px;
+  float: right;
 }
 
 .dropbtn {

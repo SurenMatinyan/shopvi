@@ -3,7 +3,8 @@ import classes from './Nav.module.css';
 import Login from './Login';
 import URL from '../../URL';
 import Logout from './Logout/Logout';
-import logo from '../../Viki.jpg';
+import logo from '../../assets/Viki.jpg';
+
 
 
 

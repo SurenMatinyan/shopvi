@@ -9,7 +9,7 @@ const Carousele = () => {
             <Carousel.Item>
                 <img  height="500"
                 className="d-block w-100"
-                src="https://images.hdqwalls.com/download/lexus-lc-500-limited-edition-2018-front-7g-1360x768.jpg"
+                src="https://www.teahub.io/photos/full/71-713184_adidas-forum-mid-sneakers.jpg"
                 alt="First slide"
                 />
                 <Carousel.Caption>
@@ -20,7 +20,7 @@ const Carousele = () => {
             <Carousel.Item>
                 <img  height="500"
                 className="d-block w-100"
-                src="https://images.hdqwalls.com/download/lexus-lc-500-drifting-rq-1360x768.jpg"
+                src="https://difweb.org/wp-content/uploads/2019/02/Hugo-Boss-vegan-shoes_dezeen_2364_col_15-1500x500.jpg"
                 alt="Second slide"
                 />
 
@@ -32,7 +32,7 @@ const Carousele = () => {
             <Carousel.Item>
                 <img height="500"
                 className="d-block w-100"
-                src="https://images.hdqwalls.com/download/2021-lexus-lc-500-convertible-by-1360x768.jpg"
+                src="https://forum.sketchfab.com/uploads/db4890/original/3X/8/a/8abf3e4a1f0602471282b69febc7d6333993407b.jpg"
                 alt="Third slide"
                 />
 

@@ -1,11 +1,18 @@
 import React from 'react';
 import classes from './Logout.module.css';
 import { NavLink } from 'react-router-dom'
+import basket from '../../../assets/basket.png';
+import order from '../../../assets/orders.jpg';
 
 
 const Logout = (props) => {
     return (
         <div className={classes.display}>
+            <div className={classes.icon}>
+            <img width='28px' className={classes.iconBasket} src={basket} />
+            <img width='28px' className={classes.iconBasket} src={order} />
+            </div>
+            
              <div className={classes.dropdown}>
                 <button className={classes.dropbtn}>{props.users.email}</button>
                 <div className={classes.dropdownContent}>
