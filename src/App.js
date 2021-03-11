@@ -8,7 +8,7 @@ import ProductContainer from './components/Products/ProductsContainer';
 import ItemContainer from './components/Item/ItemContainer';
 import SignupContainer from './components/Signup/SignupContainer';
 import Admin from './components/Admin/Admin';
-import Home from './components/Home/Home';
+import HomeContainer from './components/Home/HomeContainer';
 import UsersPageContainer from './components/UsersPage/UsersPageContainer';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <div className='touch'>
       <Route path='/'  component={Header} />
       <Route path='/'  component={NavContainer} />
-      <Route exact path='/' component={Home} />
+      <Route exact path='/' component={HomeContainer} />
       <Route path='/profile'  component={UsersContainer} />
       <Route path='/products/:type'  component={ProductContainer} />
       <Route path='/item/:id'  component={ItemContainer} />
