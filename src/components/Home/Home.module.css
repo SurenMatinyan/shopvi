@@ -14,8 +14,10 @@
 }
 
 .hed {
-  border-bottom: solid 1px rgb(218, 218, 218);
+  border-bottom: solid 1px rgb(128, 128, 128);
+ margin: 0 30px;
 }
+
 
 .productCont{
   display: grid;

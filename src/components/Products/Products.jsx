@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Products.module.css';
 import SideBar from './SideBar/SideBar';
+import URL from '../../URL';
 
 const Products =  function(props) {
     const pageCount = [];
@@ -18,7 +19,7 @@ const Products =  function(props) {
                 <div className={classes.productss}>
                 {props.product.map( el => <NavLink to={`/item/${el._id}`}>
                     <div className={classes.product}>
-                        <img className={classes.img} width='250px' src={'https://servershopviki.herokuapp.com' + el.imgURL}/>
+                        <img className={classes.img} width='250px' src={URL + el.imgURL}/>
                         <div className={classes.itemText}>
                             <li>{el.name}</li>
                             <li>{el.comment}</li>
