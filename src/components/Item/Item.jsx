@@ -5,17 +5,17 @@ import URL from '../../URL'
 
  
 const Item = function(props){
-console.log(props);
+
     return(
     <div className={classes.continer}>
         <div className={classes.itemContiner}>
             <div className={classes.imgContiner}>
                 <img className={classes.img}  src={URL + props.items.imgURL} />
                 <div className={classes.imgType}>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
+                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
                 </div>
             </div>
             
@@ -46,7 +46,7 @@ console.log(props);
                             <p>2ps</p>
                         </label>    <br/>    
                         <input type="text"/><br/>
-                        <button>BUY</button><button>STORY</button>
+                        <button>BUY</button><button onClick={ props.addCart }>ADD+</button>
                     </form>
                 </div>
             </div>

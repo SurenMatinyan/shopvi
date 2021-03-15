@@ -1,0 +1,64 @@
+.pro{
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+.productContiner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    width: 90%;
+    height: 150px;
+    border: solid 1px rgb(151, 151, 151);
+    padding: 10px;
+    margin: auto;
+}
+
+.imgCont {
+    border: black solid 2px;
+    width: 120px;
+    height: 120px;
+}
+
+.imgCont img {
+    width: 100%;
+}
+
+.name {
+   
+    margin: auto;
+}
+
+.price{
+    margin: auto;
+}
+
+.caunt { 
+    margin: auto;
+}
+
+.caunt  input{ 
+    width: 80px;
+    
+}
+
+.total {
+    margin: auto;
+}
+
+.trashIcon{ 
+    width: 25px;
+    margin: auto;
+}
+
+.trashIcon span{
+    width: 100%;
+    cursor: pointer;
+}
+
+.trashIcon img {
+    width: 100%;
+}
+

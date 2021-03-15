@@ -1,7 +1,8 @@
 const SETTRANSACTION = "SETTRANSACTION";
+const REMOVEBASKET = "REMOVEBASKET";
 
 const transactionState = {
-    basket: [],
+    basket: null,
     buying: [],
     finished: [],
 }
@@ -10,8 +11,12 @@ const transactionState = {
 const transactionReducer = (state = transactionState, action) => {
     switch(action.type){
         case SETTRANSACTION: {
-            console.log(action.trans);
-            return { ...state, basket: [...action.trans]}
+            return { ...state, basket: [...action.trans.basket]}
+        }
+
+        case REMOVEBASKET: {
+            const remove = state.basket.filter(n => n._id._id !== action.itemId);
+            return { ...state, basket: [...remove] }
         }
 
         default: 
@@ -21,5 +26,7 @@ const transactionReducer = (state = transactionState, action) => {
 
 
 export const setTransactionAC = ( trans ) => ({type: SETTRANSACTION, trans});
+
+export const setRemoveAC = ( itemId ) => ({type: REMOVEBASKET, itemId});
 
 export default transactionReducer;

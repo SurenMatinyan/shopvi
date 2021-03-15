@@ -16,9 +16,23 @@ class ItemContainer extends React.Component{
                 this.props.setItems(result)
             })
     }
+
+
+    addCart(event){
+        event.preventDefault();
+        console.log(this.props.items._id)
+        const { _id } = this.props.items;
+        fetch(URL + '/transaction/basket' , {
+            method: "PATCH",
+            headers: {authorization: sessionStorage.getItem("token"), "Content-Type": "application/json"},
+            body: JSON.stringify({_id})
+        })
+        .then(res => res.json())
+        .then(result => console.log(result));
+    }
     render(){
         return (
-                <Item {...this.props} />
+                <Item {...this.props}  addCart={this.addCart.bind(this)}/>
         )
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Users.module.css';
 import { NavLink } from 'react-router-dom';
-import URL from '../../URL';
+import Add from './add/add';
 
 const UsersPage = (props) => {
     return (
@@ -18,22 +18,10 @@ const UsersPage = (props) => {
                         <NavLink  to="/page?tab=finished">finished</NavLink>
                     </span>
                 </div>
-                <div className={classes.pro}>
-                   <div className={classes.productContiner}>
-                       <div className={classes.imgCont}>
-                         <img src={URL + props.transaction.basket[0].imgURL} />
-                       </div>
-                       <div>
-                           PRICE <br/>
-                            {props.transaction.basket[0].price}
-                       </div>
-                       <div> 
-                           NAME <br/>
-                            {props.transaction.basket[0].name}
-                       </div>
-                    </div>
+                <Add {...props}/>
+                <div className={classes.buy}>
+                    <span>buy</span>
                 </div>
-                
             </div>
         </div>
     )
@@ -41,3 +29,30 @@ const UsersPage = (props) => {
 
 
 export default UsersPage;
+
+
+
+/*                <div className={classes.pro}>
+                   <div className={classes.productContiner}>
+                       <div className={classes.imgCont}>
+                         <img src={URL + props.transaction.basket[0].imgURL} />
+                       </div>
+                       <div className={classes.name}>
+                           NAEM <br/>
+                           {props.transaction.basket[0].name}
+                           
+                       </div>
+                       <div className={classes.price}> 
+                           PRICE <br/>
+                           {props.transaction.basket[0].price}
+                       </div >
+                       <div className={classes.caunt}>
+                           <input type="number"/>
+                       </div>
+                       <div className={classes.total}>
+                            <div>
+                                {props.transaction.basket[0].price}
+                            </div>
+                       </div>
+                    </div>
+                </div>*/
