@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import classes from './Users.module.css';
 import { NavLink } from 'react-router-dom';
 import Add from './add/add';
-import { Spinner } from 'react-bootstrap'
 
 const UsersPage = (props) => {
 
@@ -21,7 +20,7 @@ const UsersPage = (props) => {
                         <NavLink  to="/page?tab=finished">finished</NavLink>
                     </span>
                 </div>
-                    <Add {...props}/>  
+                <Add {...props}/>  
                 <div className={classes.buy}>
                     <span>buy</span>
                 </div>
@@ -32,3 +31,5 @@ const UsersPage = (props) => {
 
 
 export default UsersPage;
+
+//

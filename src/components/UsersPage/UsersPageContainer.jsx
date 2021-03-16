@@ -41,7 +41,9 @@ class UsersPageContainer extends React.Component {
     render(){
         return (
             <div>
-                {this.state.isLoad ? this.props.isAuth ? <UsersPage {...this.props} delletBasket={this.delletBasket.bind(this)} /> : <Redirect to="/signup" /> : <Spinner />}  
+                 {this.state.isLoad 
+                 ? this.props.isAuth ? <UsersPage {...this.props} delletBasket={this.delletBasket.bind(this)} /> : <Redirect to="/signup" /> 
+                 : <Spinner animation="grow" />}  
             </div>
         )
     }
