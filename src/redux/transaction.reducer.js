@@ -2,7 +2,7 @@ const SETTRANSACTION = "SETTRANSACTION";
 const REMOVEBASKET = "REMOVEBASKET";
 
 const transactionState = {
-    basket: null,
+    basket: [],
     buying: [],
     finished: [],
 }

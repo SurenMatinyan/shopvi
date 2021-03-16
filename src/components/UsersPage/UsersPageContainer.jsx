@@ -4,14 +4,21 @@ import { Redirect } from 'react-router';
 import UsersPage from './UsersPage';
 import URL from '../../URL';
 import { setRemoveAC, setTransactionAC } from '../../redux/transaction.reducer';
+import { Spinner } from 'react-bootstrap'
+
 
 class UsersPageContainer extends React.Component {
+    state ={ 
+        isLoad: false
+    }
+    
     componentDidMount(){
+        this.setState({ isLoad: false })
         fetch(URL + '/transaction/basket', {headers: {authorization: sessionStorage.getItem("token")}})
         .then(res => res.json())
         .then(result => {
-            console.log("resultY",result)
             this.props.setTransaction(result);
+            this.setState({ isLoad: true }) 
         })
         .catch(err => console.error(err.message))
     }
@@ -25,15 +32,16 @@ class UsersPageContainer extends React.Component {
         .then(res => res.json())
         .then(result => { if(result.status === 0 ) {
             this.props.setRemove(itemId);
-            console.log(result.status);
         }
     })
     }
 
+
+    
     render(){
         return (
             <div>
-                {this.props.isAuth ? <UsersPage {...this.props} delletBasket={this.delletBasket.bind(this)}/> : <Redirect to="/signup" />}    
+                {this.state.isLoad ? this.props.isAuth ? <UsersPage {...this.props} delletBasket={this.delletBasket.bind(this)} /> : <Redirect to="/signup" /> : <Spinner />}  
             </div>
         )
     }

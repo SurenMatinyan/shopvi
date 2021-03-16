@@ -23,6 +23,7 @@ function App() {
       <Route path='/signup' component={SignupContainer} />
       <Route path='/page' component={UsersPageContainer} />
       <Route path='/admin' component={Admin} />
+      
     </div>
   );
 }
