@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Products.module.css';
 import SideBar from './SideBar/SideBar';
 import URL from '../../URL';
+import queryString from 'query-string';
 
 const Products =  function(props) {
+    console.log(props.page)
+    const onPageChang = (page) => {
+        props.setPage(page)
+        console.log(page)
+    }
+
+    let urlPars =queryString.parse( props.location.search);
+    
+    urlPars.page = props.page;
+    urlPars = queryString.stringify(urlPars)
+
     const pageCount = [];
     const page = Math.ceil(props.pageCount/15)  
     for(let i = 1; i <= page; i ++){
@@ -13,11 +25,11 @@ const Products =  function(props) {
     
     return (
         <div className={classes.grid}>
-            <div><SideBar /></div>
+            <div><SideBar {...props}/></div>
 
             <div className={classes.pageProduct}>
                 <div className={classes.productss}>
-                {props.product.map( el => <NavLink to={`/item/${el._id}`}>
+                {props.product.map( el => <NavLink style={{textDecoration: "none", }} to={`/item/${el._id}`}>
                     <div className={classes.product}>
                         <img className={classes.img} width='250px' src={URL + el.imgURL}/>
                         <div className={classes.itemText}>
@@ -29,14 +41,13 @@ const Products =  function(props) {
                     </div>
                 </NavLink>
             ) }
-                </div>   
-                <div className={classes.pageContin}>
-                    <div>
-                    {pageCount.map( el => 
-                                <NavLink to={`${props.match.url}?page=${el}`}>{el}</NavLink>
-                            )}
-                    </div>
                 </div>
+                    <div className={classes.paginaty}>
+                        {pageCount.map( el =>
+                                <NavLink onClick={( e ) => {window.scrollTo(0, 0); onPageChang(el)  }} className={classes.pagination} to={{  search: urlPars ? urlPars : `page=${el}` } }>{el}</NavLink>  
+                                )}
+                    </div>
+                   
             </div>
             
         </div>
@@ -46,4 +57,6 @@ const Products =  function(props) {
 
 
 export default Products;
- /**/
+
+
+//

@@ -4,6 +4,7 @@
     border-radius: 5px;
     padding-bottom: 20px;
     padding-top: 20px;
+    box-shadow: 0 4px 6px -6px #777;
 }
 
 .info {
@@ -27,8 +28,29 @@
     border-radius: 5px;
 }
 
-
-
 .category {
     
 }
+
+.caty:hover {
+    text-decoration: none;
+ }
+ 
+
+.catDiv {
+    padding: 6px;
+    color: black; 
+    width: 200px;
+    height: 40px;
+}
+
+.catDiv:hover {
+    text-decoration: none;
+    background-color: rgba(158, 158, 158, 0.336);
+    border-radius: 8px;
+}
+
+
+
+
+

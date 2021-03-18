@@ -37,6 +37,7 @@
   border: rgb(218, 218, 218) solid 1px;
   border-radius: 5px;
   background-color: rgb(260, 260, 260);
+  box-shadow: 0 4px 6px -6px #777;
 }
 
 .imge{

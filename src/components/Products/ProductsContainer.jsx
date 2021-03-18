@@ -12,15 +12,15 @@ class ProductsContainer extends React.Component {
         fetch(URL + `${this.props.match.url}` + param)
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 this.props.setProduct({product: result.getProduct, pageCount: result.caunt});
             })
     }
 
+   
+
     componentWillReceiveProps(nextProps){
         if (nextProps.match.params.type !== this.props.match.params.type 
             || nextProps.location.search !== this.props.location.search){
-                console.log(nextProps.location.search);
             fetch(URL + `${nextProps.match.url}${nextProps.location.search}`)
             .then(res => res.json())
             .then(result => {
@@ -30,19 +30,12 @@ class ProductsContainer extends React.Component {
         }
     }
 
-    onPageChang(page){
-        this.props.setPage(page);
-        fetch(URL + `${this.props.match.url}?page=${page}`)
-            .then(res => res.json())
-            .then(result => {
-               this.props.setProduct(result);
-            })
-    }
+   
 
     render(){
         return (
             <div>
-                <Products {...this.props} onPageChang={this.onPageChang.bind(this)}/> 
+                <Products {...this.props} /> 
             </div>
             
         )

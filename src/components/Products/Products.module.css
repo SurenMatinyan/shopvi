@@ -35,6 +35,11 @@
     margin-right: 10px;
     margin-bottom: 20px;
     background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px -6px #777;
+}
+
+.product:hover {
+  border: rgb(156, 156, 156) solid 1px;
 }
 
 .img{
@@ -44,22 +49,32 @@
     margin-top: 20px;
 }
 
-.pageContin {
-    border: 5px solid rgb(200, 218, 200);
-}
 
-.pageContin div{
-    border: 2px solid rgb(0, 0, 0);
-    text-align: center;
-    width: 450px;
+
+.paginaty{
     margin: auto;
 }
 
-.pageNum {
-    font-weight: bold;
+.pagination{
     padding: 10px;
-    font-size: 19px;
+    margin-left: 2px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
 }
+
+.pagination:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgba(102, 102, 102, 0.39);
+    border-radius: 10px;
+}
+
+.pagination:focus { 
+    background-color: rgba(102, 102, 102, 0.39);
+    border-radius: 10px;
+}
+
+
 
 .itemText li {
   color: black;
