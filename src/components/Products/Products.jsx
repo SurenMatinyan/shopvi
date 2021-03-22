@@ -6,17 +6,14 @@ import URL from '../../URL';
 import queryString from 'query-string';
 
 const Products =  function(props) {
-    console.log(props.page)
-    const onPageChang = (page) => {
-        props.setPage(page)
-        console.log(page)
-    }
+   
 
     let urlPars =queryString.parse( props.location.search);
-    
-    urlPars.page = props.page;
+    delete urlPars.page;
+    console.log(urlPars);
     urlPars = queryString.stringify(urlPars)
-
+    
+    
     const pageCount = [];
     const page = Math.ceil(props.pageCount/15)  
     for(let i = 1; i <= page; i ++){
@@ -44,7 +41,7 @@ const Products =  function(props) {
                 </div>
                     <div className={classes.paginaty}>
                         {pageCount.map( el =>
-                                <NavLink onClick={( e ) => {window.scrollTo(0, 0); onPageChang(el)  }} className={classes.pagination} to={{  search: urlPars ? urlPars : `page=${el}` } }>{el}</NavLink>  
+                                <NavLink onClick={( e ) => {window.scrollTo(0, 0) }} className={classes.pagination} to={{  search: urlPars ? `${urlPars}&page=${el}` : `page=${el}` } }>{el}</NavLink>  
                                 )}
                     </div>
                    

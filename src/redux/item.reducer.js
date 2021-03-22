@@ -7,7 +7,8 @@ const itemState = {
         name: null,
         price: null,
         comment: null,
-        imgURL: null
+        imgURL: null,
+        option: null
     }
 }
 

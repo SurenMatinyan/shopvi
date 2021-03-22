@@ -12,6 +12,12 @@ const productState = {
         newsWoman: [],
         newsChildren: []
     },
+
+    categoryProduct: {
+        forMen: ["pants", "hat", "jeans", "shoes"],
+        forWoman: ["pants", "hat", "jeans", "shoes", "glasses", "skirts"],
+        forChildren: []
+    },
     
     page: 1,
 

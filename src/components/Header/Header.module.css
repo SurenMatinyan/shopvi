@@ -1,5 +1,13 @@
 .App {
-background-color: rgb(99, 99, 99);
-height: 2px;
+    margin: auto;
+height: 55px;
+font-size: 40px;
+text-align: center;
+color: rgb(68, 68, 68);
+font-family: Serif;
+border-bottom: 1px solid rgb(129, 129, 129);
+width: 500px;
 } 
+
+
 

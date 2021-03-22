@@ -8,27 +8,25 @@ import { setItemAC } from '../../redux/item.reducer';
 class ItemContainer extends React.Component{
     
     componentDidMount(){
-        const productId = this.props.match.params.id
+        const productId = this.props.match.params.id;
         fetch(URL + `/products/item/${productId}`)
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 this.props.setItems(result)
             })
+            .catch(err => console.log(err.message))
     }
 
 
     addCart(event){
         event.preventDefault();
-        console.log(this.props.items._id)
         const { _id } = this.props.items;
         fetch(URL + '/transaction/basket' , {
             method: "PATCH",
             headers: {authorization: sessionStorage.getItem("token"), "Content-Type": "application/json"},
             body: JSON.stringify({_id})
         })
-        .then(res => res.json())
-        .then(result => console.log(result));
+        .catch(err => console.log(err))
     }
     render(){
         return (
@@ -44,7 +42,7 @@ const stateToProps = (state) => {
 
 const dispatchToProps = (dispatch) => {
     return{
-        setItems: (items) => { dispatch(setItemAC(items)) } 
+        setItems: items =>  dispatch(setItemAC(items)) 
     }
         
     

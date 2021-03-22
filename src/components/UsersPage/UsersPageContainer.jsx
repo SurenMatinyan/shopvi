@@ -41,9 +41,10 @@ class UsersPageContainer extends React.Component {
     render(){
         return (
             <div>
-                 {this.state.isLoad 
-                 ? this.props.isAuth ? <UsersPage {...this.props} delletBasket={this.delletBasket.bind(this)} /> : <Redirect to="/signup" /> 
-                 : <Spinner animation="grow" />}  
+                {this.props.isAuth 
+                ? this.state.isLoad && <UsersPage {...this.props} delletBasket={this.delletBasket.bind(this)} /> || <Spinner animation="grow" /> 
+                : <Redirect to="/signup" />}
+                
             </div>
         )
     }
@@ -58,3 +59,4 @@ const dispatchToProps = (dispatch) => {
 }
 
 export default connect(stateToProps, dispatchToProps)(UsersPageContainer);
+

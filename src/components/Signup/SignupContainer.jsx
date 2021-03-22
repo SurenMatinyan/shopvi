@@ -2,6 +2,8 @@ import React from 'react';
 import Signup from './Signup'
 import { reduxForm } from 'redux-form';
 import URL from '../../URL';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 
 class SignupContainer extends React.Component {
 
@@ -24,12 +26,16 @@ class SignupContainer extends React.Component {
      render(){
           return(  
           <div>
-               <Signup {...this.props} onSubmit={this.onSubmit}/>
+               {!this.props.isAuth ? <Signup {...this.props} onSubmit={this.onSubmit}/> : <Redirect to="/" />} 
           </div> )  
      }
 }
 
+const stateToProps = (state) => {
+     return { isAuth: state.usersPage.users.isAuth}
+ }
 
- 
 
-export default SignupContainer;
+
+
+export default  connect(stateToProps)(SignupContainer);

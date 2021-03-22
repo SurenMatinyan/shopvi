@@ -31,13 +31,13 @@ const Nav =  function(props) {
     
     return (
     <div className={classes.nav}>
-        <div className={classes.logo}><NavLink to="/"><img width="100px" height="40px" src={logo} /></ NavLink></div>
             <div className={classes.ullChild}>
                 <ul className={classes.ull}>
+                <li className={classes.item}><NavLink to="/" activeClassName={classes.active}>HOME</NavLink></li>
                     <li className={classes.item}><NavLink to="/products/man"   activeClassName={classes.active}>MAN</NavLink></li>
                     <li className={classes.item}><NavLink to="/products/woman" activeClassName={classes.active}>WOMAN</NavLink></li>
                     <li className={classes.item}><NavLink to="/products/children" activeClassName={classes.active}>CHILDREN</NavLink></li>
-                    <li className={classes.item}><NavLink to="/page" activeClassName={classes.active}>My Profile</NavLink></li>
+                    <li className={classes.item}><NavLink to="/page" activeClassName={classes.active}>PROFILE</NavLink></li>
                 </ul>
             </div>
         {!props.users.isAuth 

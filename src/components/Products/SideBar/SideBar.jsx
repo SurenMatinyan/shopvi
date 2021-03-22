@@ -1,29 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './SideBar.module.css';
-
+import queryString from 'query-string';
 
 const SideBar = (props) => {
-    console.log(props.location.pathname)
+    const [cat, setCat] = useState(null)
+    const [ priceMin, setMin ] = useState(null)
+    const [ priceMax, setMax ] = useState(null)
+    const sub = (val) => {
+        setCat(val);
+        setMin("");
+        setMax("");
+    }
+    let obj = {}
+    priceMin && (obj.priceMin = priceMin);
+    priceMax && ( obj.priceMax = priceMax );
+    cat && ( obj.cat = cat )
+    let urlPars = queryString.stringify(obj)
+    const submit = () => {
+        props.history.push( { search: urlPars} )
+        setCat(null);
+
+    }
+    let n = [];
+    let find = props.match.params.type;
+    find === "man" && (find = props.category.forMen);
+    find === "woman" && (find =props.category.forWoman);
+    find === "children" && (find =props.category.forChildren)
+    console.log(find)
     return(
         <div className={classes.container}>
             <div className={classes.info}>
                 <div className={classes.category}>
                     <h1>CATEGORY</h1>
-                    <NavLink   className={classes.caty} to={`${props.location.pathname}?child=glxark`}><div className={classes.catDiv}>Պայուսակներ</div></NavLink>
-                    <NavLink   className={classes.caty} to={`${props.location.pathname}?ggg=asd`}><div className={classes.catDiv}>Պայուսակներ</div></NavLink>
-                    <NavLink   className={classes.caty} to={`/products/man`}><div className={classes.catDiv}>Պայուսակներ</div></NavLink>
-                    <NavLink   className={classes.caty} to={`/products/man`}><div className={classes.catDiv}>Պայուսակներ</div></NavLink>
-                    <NavLink   className={classes.caty} to={`/products/man`}><div className={classes.catDiv}>Պայուսակներ</div></NavLink>
+                    {find.map(el => <NavLink   className={classes.caty} to={{ search: `cat=${el}`}}>
+                        <div onClick={()=> {sub(el)} } className={classes.catDiv}>{el}</div>
+                        </NavLink>)}
+                    <NavLink   className={classes.caty} to={{ search: `cat=asd`}}><div onClick={()=> {sub("asd")} } className={classes.catDiv}>Պայուսակներ</div></NavLink>
+                    <NavLink   className={classes.caty} to={{ search: `cat=dd`}}><div onClick={()=> {sub("dd")} }  className={classes.catDiv}>Պայուսակներ</div></NavLink>
+                    <NavLink   className={classes.caty} to={{ search: `cat=attsd`}}><div onClick={()=> {sub("attsd")} } className={classes.catDiv}>Պայուսակներ</div></NavLink>
+
+                    
+                    
                        
                 </div>
 
                 <h1>price</h1>
                 <div className={classes.priceInput}>
-                    <form action="">
-                        <input type="text" placeholder="min"/> - <input type="text" placeholder="max"/>
-                        <button>SET</button>
-                    </form>
+                    
+                        <input value={priceMin} onChange={ e => { setMin(e.target.value) } }  type="number" placeholder="min"/> - 
+                         <input value={priceMax} onChange={ e => { setMax(e.target.value) } }  type="number" placeholder="max"/>
+                        <button onClick={ submit }>SET</button>
+                    
                 </div>
             </div>
             

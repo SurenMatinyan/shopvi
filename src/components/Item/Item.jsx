@@ -1,57 +1,75 @@
 import React, { useState } from 'react';
 import classes from './Item.module.css';
-import URL from '../../URL'
+import URL from '../../URL';
+import { Spinner } from 'react-bootstrap'
 
 
  
 const Item = function(props){
+console.log(props)
+    const [ selected, setSelected ] = useState(0);
+    const [ count, setCount ]  = useState(1);
+    const but = (e, val) => {
+        e.preventDefault();
+        return val + count >= 1 && setCount(count + val);
+    }
+
 
     return(
-    <div className={classes.continer}>
-        <div className={classes.itemContiner}>
-            <div className={classes.imgContiner}>
-                <img className={classes.img}  src={URL + props.items.imgURL} />
-                <div className={classes.imgType}>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
-                    <div><img width='100%' src="https://servershopviki.herokuapp.com/api/images/1gkng4z8klql7424.jpg"/></div>
-                </div>
-            </div>
-            
-            <div className={classes.infoContiner}>
-                <div className={classes.info}>
-                    <div className={classes.name}>NAME {props.items.name}</div>
-                    <div className={classes.price}>Գինը {props.items.price} ֏</div>
-                    <div className={classes.comment}>COMMENT {props.items.comment}</div>
-                </div>
-                <div className={classes.formContiner}>
-                    <form className={classes.form}>
-                        <label className={classes.label} >
-                            <input type="radio" name="psi"/>
-                            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg"/>
-                        </label>
-                        <label className={classes.label} >
-                            <input type="radio" name="psi"/>
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/41Leu3gBUFL.jpg"/>
-                        </label> <br/> 
+        <div>
+           {props.items.option ?  <div className={classes.continer} >
+                <div className={classes.itemContiner}>
+                    <div className={classes.imgContiner}>
+                        <img className={classes.img}  src={URL + props.items.option.img[selected]} />
+                        <div className={classes.imgType}>
+                            {console.log(props)}
+                            {props.items.option.img.map((el, i) =>   <button onClick={()=>{setSelected(i)}}><img width="100%" src={URL + el} alt=""/></button>)}
+                            
+                        </div>
+                    </div>
+                    
+                    <div className={classes.infoContiner}>
+                        <div className={classes.info}>
+                            <div className={classes.name}>NAME {props.items.name}</div>
+                            <div className={classes.price}>Գինը {props.items.price} ֏</div>
+                            <div className={classes.comment}>COMMENT {props.items.comment}</div>
+                        </div>
+                        <div className={classes.formContiner}>
+                            <form className={classes.form}>
+                                {props.items.option.iconImg.map(el => <label className={classes.label} >
+                                    <input type="radio" name="psi"/>
+                                    <img src={URL + el}/>
+                                </label>)}
+                                <br/> 
 
-                        <label className={classes.label} >
-                            <input type="radio" name="ll"/>
-                            <p>p</p>
-                        </label>
-                        
-                        <label className={classes.label} >
-                            <input type="radio" name="ll"/>
-                            <p>2ps</p>
-                        </label>    <br/>    
-                        <input type="text"/><br/>
-                        <button>BUY</button><button onClick={ props.addCart }>ADD+</button>
-                    </form>
+                                <label className={classes.label} >
+                                    <input type="radio" name="ll"/>
+                                    <p>p</p>
+                                </label>
+                                
+                                <label className={classes.label} >
+                                    <input type="radio" name="ll"/>
+                                    <p>2ps</p>
+                                </label>    <br/> 
+
+                                <div className={classes.count}>
+                                    <button onClick={ ( e ) => { but(e, -1)  } }>–</button>
+                                        <input type="number" value={count} />
+                                    <button onClick={ ( e ) => { but(e, 1) } }>+</button>
+                                </div>  
+                               
+                               <br/>
+                                <div className={ classes.add }>
+                                    <button>BUY</button><button onClick={ props.addCart } > ADD+</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div> : <div><Spinner /></div>} 
+
         </div>
-    </div>
     )
 }
 
@@ -59,15 +77,4 @@ const Item = function(props){
 export default Item;
 
 
-/*
-<div className={classes.itemContiner}>
-            <div className={classes.item}>
-                <img className={classes.img}  src={'https://servershopviki.herokuapp.com' + props.items.imgURL} />
-                <div>
-                    <div>NAME {props.items.name}</div>
-                    <div>PRICE {props.items.price}</div>
-                    <div>COMMENT {props.items.comment}</div>
-                </div>
-            </div>
-        </div>
-*/
+//  {props.items.option.img.map(el => console.log("asd") ) }

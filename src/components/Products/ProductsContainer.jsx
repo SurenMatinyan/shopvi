@@ -24,7 +24,7 @@ class ProductsContainer extends React.Component {
             fetch(URL + `${nextProps.match.url}${nextProps.location.search}`)
             .then(res => res.json())
             .then(result => {
-                
+                console.log(result)
                 this.props.setProduct({product: result.getProduct, pageCount: result.caunt});
             })
         }
@@ -44,7 +44,8 @@ class ProductsContainer extends React.Component {
 const stateToProps = (state) => {
     return { product: state.productPage.product, 
              page: state.productPage.page,
-             pageCount: state.productPage.pageCount }
+             pageCount: state.productPage.pageCount,
+             category: state.productPage.categoryProduct }
 }
 const dispatchToProps = (dispatch) => {
     return {

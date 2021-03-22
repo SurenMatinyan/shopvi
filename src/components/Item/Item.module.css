@@ -35,11 +35,15 @@
     border-top: solid 1px black;
 }
 
-.imgType div{
-    border: solid 1px black;
+.imgType button{
+    border: solid 1px rgb(197, 197, 197);
     padding: 5px;
     margin-left: 8px;
     
+}
+
+.imgType button:hover {
+    border: solid 1px rgb(102, 102, 102);
 }
 
 .infoContiner {
@@ -110,5 +114,46 @@
 }
 .label input:checked + p{
     border: solid 2px rgb(25, 0, 255);
+}
+
+
+
+.count button{
+    width: 30px;
+    border: solid rgb(165, 165, 165) 1px;
+    border-radius: 5px;
+    background-color: rgb(231, 231, 231);
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.count input {
+    border-radius: 5px;
+    width: 45px;
+    text-align: center;
+    border: solid rgb(165, 165, 165) 1px;
+}
+
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.add {
+    margin-top: 40px;
+    border-top: 1px solid rgb(153, 153, 153);
+    width: 400px;
+}
+
+.add button{
+    margin-top: 30px;
+    width: 100px;
+    height: 35px;
+    margin-right: 10px;
+    border: none; 
+    background-color: rgb(58, 78, 255);
+    color: white;
+    border-radius: 8px;
+   
 }
 
