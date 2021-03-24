@@ -33,7 +33,7 @@ const Nav =  function(props) {
     <div className={classes.nav}>
             <div className={classes.ullChild}>
                 <ul className={classes.ull}>
-                <li className={classes.item}><NavLink to="/" activeClassName={classes.active}>HOME</NavLink></li>
+                <li className={classes.item}><NavLink to="/" activeClassName={classes.active}>HOME </NavLink></li>
                     <li className={classes.item}><NavLink to="/products/man"   activeClassName={classes.active}>MAN</NavLink></li>
                     <li className={classes.item}><NavLink to="/products/woman" activeClassName={classes.active}>WOMAN</NavLink></li>
                     <li className={classes.item}><NavLink to="/products/children" activeClassName={classes.active}>CHILDREN</NavLink></li>
@@ -41,7 +41,7 @@ const Nav =  function(props) {
                 </ul>
             </div>
         {!props.users.isAuth 
-        ? <Login onSubmit={onSubmit}/> 
+        ? <Login onSubmit={onSubmit} history={props.history}/> 
         : <Logout {...props} />}
     
     </div>

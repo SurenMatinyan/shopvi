@@ -22,7 +22,6 @@ console.log(props)
                     <div className={classes.imgContiner}>
                         <img className={classes.img}  src={URL + props.items.option.img[selected]} />
                         <div className={classes.imgType}>
-                            {console.log(props)}
                             {props.items.option.img.map((el, i) =>   <button onClick={()=>{setSelected(i)}}><img width="100%" src={URL + el} alt=""/></button>)}
                             
                         </div>

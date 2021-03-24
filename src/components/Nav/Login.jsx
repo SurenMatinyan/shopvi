@@ -13,9 +13,10 @@ const Login =  function(props) {
                     <button>LOGIN</button>
                 </form>
             </div>
-            <div className={classes.signup}>
-                <div className={classes.signupButton}><NavLink to="/signup">SIGN UP</NavLink></div>
+            <div className={classes.signupButton}>
+                <button onClick={( ) => { props.history.push("/signup") }}>SIGNUP</button>
             </div>
+            
          </div>
       )
 }
